@@ -1,0 +1,94 @@
+<app-auth-content>
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-dashboard"></i>Upload Image</h1>
+    
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+            <div class="tile-body">
+              <div class="card" >
+                <div class="card-body">
+                  <form 
+                  (ngSubmit)="addDetailImg(detailImg)"
+                   #detailImg="ngForm">
+                    <div class="text-center">
+                      <img [src]="imgSrc" width="350px" height="250px" 
+                     
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label>Select file to upload</label>
+                      <input type="file" accept="image/*" 
+                      class="form-control" 
+                      #fileUploader formControlName="imageUrl"
+                        (change)="showPreview($event)">
+                      <div class="text-danger" 
+                      *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <input class="form-control" formControlName="caption" placeholder="Caption">
+                      <div class="text-danger" 
+                      *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.
+                      </div>
+                    </div> -->
+                    <!-- <div class="form-group">
+                      <select formControlName="category" class="form-control">
+                        <option value="Animal">Animal</option>
+                        <option value="Vehicle">Vehicle</option>
+                        <option value="Bird">Bird</option>
+                      </select>
+                    </div> -->
+                    <div class="row">
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="date">วันที่ถ่ายภาพ</label>
+                              <input type="text" placeholder="01/01/2001"class="form-control" bsDatepicker 
+                              [bsConfig]="{ adaptivePosition: true }"  name="date" ngModel [(ngModel)]="detailImg.date">
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="farmname">ชื่อฟาร์ม</label>
+                              <input class = "form-control" type="text" name="farmname" ngModel [(ngModel)]="detailImg.farmname">
+                          </div>
+                      </div>
+                      <!-- <div class="col-sm-6">
+                          <div class="form-group">
+                              <label for="size">ละติจูด</label>
+                              <input class = "form-control" type="text" name="size" ngModel [(ngModel)]="detailFarm.size">
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="size">ลองจิจูด</label>
+                            <input class = "form-control" type="text" name="size" ngModel [(ngModel)]="detailFarm.size">
+                        </div>
+                    </div> -->
+                     
+                    
+                  </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <a routerLink="/auth/process" class="btn btn-primary btn-block float-right">Next Image</a>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-success btn-block float-right">ProcessImage</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+</app-auth-content>

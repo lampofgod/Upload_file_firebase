@@ -1,0 +1,16 @@
+<label>เลือกจังหวัด : </label>
+<select id="provinceThai" (change)="findDistricts($event)">
+  <option *ngIf = "disShow == null"></option>
+  <option *ngFor="let pro of pro" value={{pro.PROVINCE_ID}} >{{pro.PROVINCE_NAME}}</option>
+</select>
+<br>
+<label>เลือกเขต : </label>
+<select id="subDistrictThai" (change)="findSubDistricts($event)">
+  <option *ngIf = "subDisShow == null"></option>
+  <option *ngFor="let disshow of disShow" value={{disshow.DISTRICT_ID}} >{{disshow.DISTRICT_NAME}}</option>
+</select>
+<br>
+<label >เลือกแขวง : </label>
+<select id="subDistrictThai">
+  <option *ngFor="let sub of subDisShow" value={{sub.SUB_DISTRICT_NAME}} >{{sub.SUB_DISTRICT_NAME}}</option>
+</select>

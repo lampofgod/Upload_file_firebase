@@ -1,0 +1,364 @@
+<app-auth-content>
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-dashboard"></i>เพิ่มสมาชิก</h1>
+      
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
+        </ul>
+      </div>
+        <!-- ส่วนฟอร์ม -->
+        <div class="row">
+            <div class="col-md-12">
+              <div class="tile">
+        <div class="tile-body">
+            <form (ngSubmit)="addDetailUser(detailForm)" #detailForm="ngForm">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <img src="assets/image/user.png" class="img-fluid img-thumbnail">
+                        </div>
+                        <div class="form-group">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <div class="form-group">
+                            <label for="email">อีเมล์</label>
+                            <input class = "form-control" type="email" name="email" ngModel [(ngModel)]="detailUser.email">
+                        </div> -->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="name">ชื่อ</label>
+                                    <input class = "form-control" type="text"  name="name" ngModel [(ngModel)]="detailUser.name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="lastname">นามสกุล</label>
+                                    <input class = "form-control" type="text" name="lastname" ngModel [(ngModel)]="detailUser.lastname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input class = "form-control" type="text"  name="username" ngModel [(ngModel)]="detailUser.username">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input class = "form-control" type="email" name="email" ngModel [(ngModel)]="detailUser.email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                
+                                <div class="form-group">
+                                    <label for="age">วัน/เดือน/ปีเกิด</label>
+                                    <input  type="text"
+                                    placeholder="วันเดือนปีเกิด"
+                                    class="form-control"
+                                    bsDatepicker
+                                    [bsConfig]="{ isAnimated: true }" name="date"  ngModel [(ngModel)]="detailUser.date">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="phone">เบอร์โทร</label>
+                                    <input class = "form-control" type="tel" id="phone"
+                                   name="phone"  placeholder="1234567890" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required
+                                   ngModel [(ngModel)]="detailUser.phone">
+                                    <div class="invalid-feedback">
+                                        กรุณากรอกเบอร์มือถือตัวเลข 10 หลัก
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label for="">ตำแหน่ง</label>
+                            <select class="form-control">
+                                <option value="">เลือกตำแหน่งงาน</option>
+                                <option *ngFor="let item of positionItems" [value]="item">
+                                    {{ item }}
+                                </option>
+                            </select>
+                        </div> -->
+                    </div>
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> บันทึกข้อมูลโปรไฟล์
+                    </button>
+                    <button (click)="CalculateAge()">Calculate Age</button>
+                </div>
+            </form>
+
+            <!-- <div class="row">
+                <div class="input-field col m2">
+                    <input  type="text" placeholder="วันเดือนปีเกิด"class="form-control" bsDatepicker 
+                    [bsConfig]="{ adaptivePosition: true }"  [(ngModel)]="birthdate" id="txtdate">
+                </div>
+                <div class="input-field col m4">
+                    <input type="number" [(ngModel)]="age" id="age">
+                </div>
+                <button (click)="CalculateAge()">Calculate Age</button>
+            </div>
+
+            -->
+
+        </div>
+    </div>
+     
+</div>
+     
+</div>
+     
+     
+</app-auth-content>
+ <!-- <div class="row">
+        <div class="col-md-12">
+             
+        <div class="tile-body">
+
+        <form (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
+          <div class="form-group">
+          <label for="name"> Name</label>
+          <input type="text" name="name" ngModel [(ngModel)]="wiki.name">
+          </div>
+          <div class="form-group">
+          <label for="description"> Description</label>
+          <textarea name="description" ngModel  [(ngModel)]="wiki.description">
+          </textarea>
+          </div>
+          <div class="form-group">
+
+          <button type="submit">Submit</button>
+          </div>
+
+    </form>
+    <a routerLink="/memberList">Back To Wiki List</a>
+      </div>
+        </div>
+      </div> -->
+
+<!-- <app-auth-content>
+    <div class="app-title">
+        <div>
+            <h1>
+                <i class="fa fa-user"></i> ข้อมูลส่วนตัว
+            </h1>
+            <p>หน้าแก้ไขข้อมูลส่วนตัวไม่ว่าจะเป็น ชื่อ นามสกุล และอื่นๆ</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item">
+                <i class="fa fa-home fa-lg"></i>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">ข้อมูลส่วนตัว</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile"> -->
+                <!-- ส่วนหัว -->
+
+                <!-- <div class="tile-title-w-btn">
+                    <h3 class="title">
+                        <i class="fa fa-edit"></i> แก้ไขข้อมูลส่วนตัว
+                    </h3>
+                    <p>
+                        <button (click)="openModal(template)" type="button" class="btn btn-primary icon-btn">
+                            <i class="fa fa-key"></i> เปลี่ยนรหัสผ่าน
+                        </button>
+                    </p>
+                </div> -->
+  
+                <!-- ส่วนฟอร์ม -->
+
+                <!-- <div class="tile-body">
+                    <form [formGroup]="form" (submit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                  <img *ngIf="!form.value.img" src="assets/image/user.png" class="img-fluid img-thumbnail">
+                                  <img *ngIf="form.value.img" [src]="form.value.img" class="img-fluid img-thumbnail">
+                                </div>
+                                <div class="form-group">
+                                    <input type="file"(change)="onConvertImage(inputFile)" #inputFile>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                            
+                                <div class="form-group">
+                                    <label for="">อีเมล์</label>
+                                    <input type="text" class="form-control" formControlName="email" >
+                                </div>
+                      
+                               
+  
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">ชื่อ</label>
+                                            <input type="text" class="form-control" formControlName="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <label for="">นามสกุล</label>
+                                          <input type="text" class="form-control" formControlName="lastname">
+                                      </div>
+                                  </div>
+                                 
+                                </div>
+  
+                                <div class="form-group">
+                                  <label for="">ชื่อบัญชี</label>
+                                  <input type="text" class="form-control" formControlName="username" >
+                              </div>
+  
+                                <div class="form-group">
+                                    <label for="">ตำแหน่ง</label>
+                                    <select class="form-control" formControlName="position">
+                                        <option value="">เลือกตำแหน่งงาน</option>
+                                        <option *ngFor="let item of positionItems" [value]="item">
+                                            {{ item }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+  
+                        <hr>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-save"></i> บันทึกข้อมูลโปรไฟล์
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </app-auth-content>
+  <ng-template #template>
+      <app-change-password [modalRef]="modalRef"></app-change-password>
+  
+    </ng-template> -->
+ <!-- <app-auth-content>
+  <div class="app-title">
+      <div>
+          <h1>
+              <i class="fa fa-user"></i> ข้อมูลส่วนตัว
+          </h1>
+          <p>หน้าแก้ไขข้อมูลส่วนตัวไม่ว่าจะเป็น ชื่อ นามสกุล และอื่นๆ</p>
+      </div>
+      <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">
+              <i class="fa fa-home fa-lg"></i>
+          </li>
+          <li class="breadcrumb-item">
+              <a href="#">ข้อมูลส่วนตัว</a>
+          </li>
+      </ul>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <div class="tile"> -->
+              <!-- ส่วนหัว -->
+              <!-- <div class="tile-title-w-btn">
+                  <h3 class="title">
+                      <i class="fa fa-edit"></i> แก้ไขข้อมูลส่วนตัว
+                  </h3>
+                  <p>
+                      <button (click)="openModal(template)" type="button" class="btn btn-primary icon-btn">
+                          <i class="fa fa-key"></i> เปลี่ยนรหัสผ่าน
+                      </button>
+                  </p>
+              </div> -->
+
+              <!-- ส่วนฟอร์ม -->
+              <!-- <div class="tile-body">
+                  <form (ngSubmit)="addWiki(wikiForm)" #wikiForm="ngForm">
+                      <div class="row">
+                          <div class="col-sm-4">
+                              <div class="form-group">
+                                <img *ngIf="!form.value.img" src="assets/image/user.png" class="img-fluid img-thumbnail">
+                                <img *ngIf="form.value.img" [src]="form.value.img" class="img-fluid img-thumbnail">
+                              </div>
+                              <div class="form-group">
+                                  <input type="file"(change)="onConvertImage(inputFile)" #inputFile>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                          
+                              <div class="form-group">
+                                  <label for="">อีเมล์</label>
+                                  <input type="text" class="form-control" formControlName="email" >
+                              </div>
+                    
+                             
+
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                      <div class="form-group">
+                                          <label for="">ชื่อ</label>
+                                          <input type="text" class="form-control" f name="name" ngModel [(ngModel)]="wiki.name">
+                                      </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">นามสกุล</label>
+                                        <input type="text" class="form-control" formControlName="lastname">
+                                    </div>
+                                </div>
+                               
+                              </div>
+
+                              <div class="form-group">
+                                <label for="">ชื่อบัญชี</label>
+                                <input type="text" class="form-control" formControlName="username" >
+                            </div>
+
+                              <div class="form-group">
+                                  <label for="">ตำแหน่ง</label>
+                                  <select class="form-control" formControlName="position">
+                                      <option value="">เลือกตำแหน่งงาน</option>
+                                      <option *ngFor="let item of positionItems" [value]="item">
+                                          {{ item }}
+                                      </option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+
+                      <hr>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary">
+                              <i class="fa fa-save"></i> บันทึกข้อมูลโปรไฟล์
+                          </button>
+                      </div>
+                     
+                  </form>
+              </div>
+          </div>
+      </div>
+      <a routerLink="/memberList">Back To Wiki List</a>
+  </div>
+</app-auth-content>
+<ng-template #template>
+    <app-change-password [modalRef]="modalRef"></app-change-password>
+
+  </ng-template> -->
